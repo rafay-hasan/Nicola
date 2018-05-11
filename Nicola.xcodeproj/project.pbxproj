@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84C428E520A4213000736E42 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C428E420A4213000736E42 /* HomeViewController.m */; };
 		BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79329F20970C2600FF0F55 /* AppDelegate.m */; };
 		BB7932A320970C2600FF0F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7932A220970C2600FF0F55 /* ViewController.m */; };
 		BB7932A620970C2600FF0F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB7932A420970C2600FF0F55 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84C428E320A4213000736E42 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		84C428E420A4213000736E42 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		BB79329B20970C2600FF0F55 /* Nicola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nicola.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB79329E20970C2600FF0F55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB79329F20970C2600FF0F55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,6 +44,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84C428E120A420F600736E42 /* Log in */ = {
+			isa = PBXGroup;
+			children = (
+				BB7932A120970C2600FF0F55 /* ViewController.h */,
+				BB7932A220970C2600FF0F55 /* ViewController.m */,
+			);
+			path = "Log in";
+			sourceTree = "<group>";
+		};
+		84C428E220A4211100736E42 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84C428E320A4213000736E42 /* HomeViewController.h */,
+				84C428E420A4213000736E42 /* HomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		BB79329220970C2600FF0F55 = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +83,8 @@
 			children = (
 				BB79329E20970C2600FF0F55 /* AppDelegate.h */,
 				BB79329F20970C2600FF0F55 /* AppDelegate.m */,
-				BB7932A120970C2600FF0F55 /* ViewController.h */,
-				BB7932A220970C2600FF0F55 /* ViewController.m */,
+				84C428E120A420F600736E42 /* Log in */,
+				84C428E220A4211100736E42 /* Home */,
 				BB7932A420970C2600FF0F55 /* Main.storyboard */,
 				BB7932AA20970C2600FF0F55 /* Assets.xcassets */,
 				BB7932AC20970C2600FF0F55 /* LaunchScreen.storyboard */,
@@ -148,6 +169,7 @@
 				BB7932A320970C2600FF0F55 /* ViewController.m in Sources */,
 				BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */,
 				BB7932B120970C2600FF0F55 /* main.m in Sources */,
+				84C428E520A4213000736E42 /* HomeViewController.m in Sources */,
 				BB7932A920970C2600FF0F55 /* Nicola.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,12 +305,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 79YLMQ62DM;
 				INFOPLIST_FILE = Nicola/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Rafay.Nicola;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.mcpdebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "14ad0db3-2cef-4865-83a0-89127c6ae1b5";
+				PROVISIONING_PROFILE_SPECIFIER = "MCP Debug";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -298,12 +322,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 79YLMQ62DM;
 				INFOPLIST_FILE = Nicola/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Rafay.Nicola;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nascenia.mcpdebug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "14ad0db3-2cef-4865-83a0-89127c6ae1b5";
+				PROVISIONING_PROFILE_SPECIFIER = "MCP Debug";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
