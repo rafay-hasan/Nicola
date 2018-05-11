@@ -235,7 +235,7 @@
         <!--Home View Controller-->
         <scene sceneID="VJg-Sr-RHH">
             <objects>
-                <viewController id="UPz-ja-wVg" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="UPz-ja-wVg" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hK-Qq-Nvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,6 +272,9 @@
                                             <constraint firstAttribute="width" constant="41" id="jef-9T-4kY"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="menu"/>
+                                        <connections>
+                                            <action selector="menuButtonAction:" destination="UPz-ja-wVg" eventType="touchUpInside" id="bAy-TA-Lh5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.90196078431372551" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,18 +286,43 @@
                                     <constraint firstItem="5nZ-lo-cWx" firstAttribute="centerY" secondItem="xJS-3j-Uj8" secondAttribute="centerY" id="jZJ-Zi-WPT"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VXY-JF-GmZ">
+                                <rect key="frame" x="0.0" y="132" width="375" height="0.0"/>
+                                <color key="backgroundColor" red="0.11338361352682114" green="0.10839609056711197" blue="0.10828883200883865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="lkN-A9-f04"/>
+                                </constraints>
+                                <color key="separatorColor" red="0.98206955194473267" green="0.9091145396232605" blue="0.00083788717165589333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="50" id="emW-qz-BaF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="emW-qz-BaF" id="Kqx-re-hkM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UPz-ja-wVg" id="OIG-Ki-hK4"/>
+                                    <outlet property="delegate" destination="UPz-ja-wVg" id="R3Q-ep-k6O"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="J1O-YA-Asd" firstAttribute="leading" secondItem="4dd-cQ-0LK" secondAttribute="leading" id="3yh-lJ-ZMr"/>
                             <constraint firstItem="xJS-3j-Uj8" firstAttribute="leading" secondItem="4dd-cQ-0LK" secondAttribute="leading" id="5vk-66-EVX"/>
+                            <constraint firstItem="VXY-JF-GmZ" firstAttribute="top" secondItem="xJS-3j-Uj8" secondAttribute="bottom" id="Bis-lt-jC2"/>
                             <constraint firstItem="ojc-dN-lYz" firstAttribute="bottom" secondItem="4dd-cQ-0LK" secondAttribute="bottom" id="Dw5-Uo-2WW"/>
                             <constraint firstItem="CJT-Tf-6tN" firstAttribute="leading" secondItem="4dd-cQ-0LK" secondAttribute="leading" id="F0x-RD-b4h"/>
                             <constraint firstItem="CJT-Tf-6tN" firstAttribute="top" secondItem="4dd-cQ-0LK" secondAttribute="top" id="QVm-ON-6xZ"/>
+                            <constraint firstItem="VXY-JF-GmZ" firstAttribute="leading" secondItem="4dd-cQ-0LK" secondAttribute="leading" id="SO3-rl-bhJ"/>
                             <constraint firstItem="4dd-cQ-0LK" firstAttribute="trailing" secondItem="J1O-YA-Asd" secondAttribute="trailing" id="WVB-Qw-Qid"/>
                             <constraint firstItem="ojc-dN-lYz" firstAttribute="trailing" secondItem="4dd-cQ-0LK" secondAttribute="trailing" id="ZY0-kS-8If"/>
                             <constraint firstItem="xJS-3j-Uj8" firstAttribute="trailing" secondItem="4dd-cQ-0LK" secondAttribute="trailing" id="ae7-Um-7Y5"/>
                             <constraint firstItem="ojc-dN-lYz" firstAttribute="leading" secondItem="4dd-cQ-0LK" secondAttribute="leading" id="bxG-mF-Cl5"/>
+                            <constraint firstItem="VXY-JF-GmZ" firstAttribute="trailing" secondItem="4dd-cQ-0LK" secondAttribute="trailing" id="gG2-XA-U9h"/>
                             <constraint firstItem="4dd-cQ-0LK" firstAttribute="bottom" secondItem="CJT-Tf-6tN" secondAttribute="bottom" id="heq-EF-WUT"/>
                             <constraint firstItem="xJS-3j-Uj8" firstAttribute="top" secondItem="4dd-cQ-0LK" secondAttribute="top" id="qIc-w7-JS9"/>
                             <constraint firstItem="4dd-cQ-0LK" firstAttribute="trailing" secondItem="CJT-Tf-6tN" secondAttribute="trailing" id="ws3-cV-QYW"/>
@@ -302,6 +330,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4dd-cQ-0LK"/>
                     </view>
+                    <connections>
+                        <outlet property="menuTableheight" destination="lkN-A9-f04" id="seR-i2-SUF"/>
+                        <outlet property="menuTableview" destination="VXY-JF-GmZ" id="AeI-bJ-7oF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebt-aA-Yzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
