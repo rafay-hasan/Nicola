@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16DC54C9097FDE00D48B1D87 /* libPods-Nicola.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC929AD19CFDD89588A0A0 /* libPods-Nicola.a */; };
+		8478BAAC20AABA530076919D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAAB20AABA530076919D /* NewsViewController.m */; };
+		8478BAAE20AABA6E0076919D /* NewsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478BAAD20AABA6E0076919D /* NewsHeader.xib */; };
+		8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAB020AABA8F0076919D /* NewsHeader.m */; };
+		8478BAB420AABB600076919D /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAB320AABB600076919D /* NewsTableViewCell.m */; };
+		8478BAB820AAC4440076919D /* RHWebServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAB720AAC4440076919D /* RHWebServiceManager.m */; };
+		8478BABB20AAC49D0076919D /* NewsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BABA20AAC49D0076919D /* NewsObject.m */; };
+		8478BABE20AACB010076919D /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BABD20AACB010076919D /* NewsDetailsViewController.m */; };
+		8478BAC120AACB2B0076919D /* NewsDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAC020AACB2B0076919D /* NewsDetailsTableViewCell.m */; };
 		84C428E520A4213000736E42 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C428E420A4213000736E42 /* HomeViewController.m */; };
 		BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79329F20970C2600FF0F55 /* AppDelegate.m */; };
 		BB7932A320970C2600FF0F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7932A220970C2600FF0F55 /* ViewController.m */; };
@@ -18,6 +27,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09CC929AD19CFDD89588A0A0 /* libPods-Nicola.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nicola.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C9DE0CDD701F679A82AB9E0 /* Pods-Nicola.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nicola.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nicola/Pods-Nicola.release.xcconfig"; sourceTree = "<group>"; };
+		5711034159D6D14D12BC5D39 /* Pods-Nicola.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nicola.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nicola/Pods-Nicola.debug.xcconfig"; sourceTree = "<group>"; };
+		8478BAAA20AABA530076919D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		8478BAAB20AABA530076919D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		8478BAAD20AABA6E0076919D /* NewsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsHeader.xib; sourceTree = "<group>"; };
+		8478BAAF20AABA8F0076919D /* NewsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsHeader.h; sourceTree = "<group>"; };
+		8478BAB020AABA8F0076919D /* NewsHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsHeader.m; sourceTree = "<group>"; };
+		8478BAB220AABB600076919D /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		8478BAB320AABB600076919D /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		8478BAB620AAC4430076919D /* RHWebServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHWebServiceManager.h; sourceTree = "<group>"; };
+		8478BAB720AAC4440076919D /* RHWebServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHWebServiceManager.m; sourceTree = "<group>"; };
+		8478BAB920AAC49D0076919D /* NewsObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsObject.h; sourceTree = "<group>"; };
+		8478BABA20AAC49D0076919D /* NewsObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsObject.m; sourceTree = "<group>"; };
+		8478BABC20AACB010076919D /* NewsDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailsViewController.h; sourceTree = "<group>"; };
+		8478BABD20AACB010076919D /* NewsDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsViewController.m; sourceTree = "<group>"; };
+		8478BABF20AACB2B0076919D /* NewsDetailsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailsTableViewCell.h; sourceTree = "<group>"; };
+		8478BAC020AACB2B0076919D /* NewsDetailsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsTableViewCell.m; sourceTree = "<group>"; };
 		84C428E320A4213000736E42 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		84C428E420A4213000736E42 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		BB79329B20970C2600FF0F55 /* Nicola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nicola.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,12 +65,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DC54C9097FDE00D48B1D87 /* libPods-Nicola.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3672C5F10AEE839E30582FF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5711034159D6D14D12BC5D39 /* Pods-Nicola.debug.xcconfig */,
+				3C9DE0CDD701F679A82AB9E0 /* Pods-Nicola.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		65AAFB8586E817FB9F8EFBA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09CC929AD19CFDD89588A0A0 /* libPods-Nicola.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8478BAB520AAC42C0076919D /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				8478BAB620AAC4430076919D /* RHWebServiceManager.h */,
+				8478BAB720AAC4440076919D /* RHWebServiceManager.m */,
+				8478BAB920AAC49D0076919D /* NewsObject.h */,
+				8478BABA20AAC49D0076919D /* NewsObject.m */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		848A3A5720AAAE7A00A85CC4 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				8478BAAA20AABA530076919D /* NewsViewController.h */,
+				8478BAAB20AABA530076919D /* NewsViewController.m */,
+				8478BAB220AABB600076919D /* NewsTableViewCell.h */,
+				8478BAB320AABB600076919D /* NewsTableViewCell.m */,
+				8478BAAF20AABA8F0076919D /* NewsHeader.h */,
+				8478BAB020AABA8F0076919D /* NewsHeader.m */,
+				8478BABC20AACB010076919D /* NewsDetailsViewController.h */,
+				8478BABD20AACB010076919D /* NewsDetailsViewController.m */,
+				8478BABF20AACB2B0076919D /* NewsDetailsTableViewCell.h */,
+				8478BAC020AACB2B0076919D /* NewsDetailsTableViewCell.m */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		84C428E120A420F600736E42 /* Log in */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +140,8 @@
 			children = (
 				BB79329D20970C2600FF0F55 /* Nicola */,
 				BB79329C20970C2600FF0F55 /* Products */,
+				3672C5F10AEE839E30582FF9 /* Pods */,
+				65AAFB8586E817FB9F8EFBA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +158,12 @@
 			children = (
 				BB79329E20970C2600FF0F55 /* AppDelegate.h */,
 				BB79329F20970C2600FF0F55 /* AppDelegate.m */,
+				8478BAB520AAC42C0076919D /* Webservice */,
 				84C428E120A420F600736E42 /* Log in */,
 				84C428E220A4211100736E42 /* Home */,
+				848A3A5720AAAE7A00A85CC4 /* News */,
 				BB7932A420970C2600FF0F55 /* Main.storyboard */,
+				8478BAAD20AABA6E0076919D /* NewsHeader.xib */,
 				BB7932AA20970C2600FF0F55 /* Assets.xcassets */,
 				BB7932AC20970C2600FF0F55 /* LaunchScreen.storyboard */,
 				BB7932AF20970C2600FF0F55 /* Info.plist */,
@@ -102,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB7932B420970C2600FF0F55 /* Build configuration list for PBXNativeTarget "Nicola" */;
 			buildPhases = (
+				1480C18F318CF6AAF86269EC /* [CP] Check Pods Manifest.lock */,
 				BB79329720970C2600FF0F55 /* Sources */,
 				BB79329820970C2600FF0F55 /* Frameworks */,
 				BB79329920970C2600FF0F55 /* Resources */,
+				59F84B6C8C4DB494967E7FEA /* [CP] Embed Pods Frameworks */,
+				B7E7C4DFF25AF4705C366E6F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB7932AE20970C2600FF0F55 /* LaunchScreen.storyboard in Resources */,
+				8478BAAE20AABA6E0076919D /* NewsHeader.xib in Resources */,
 				BB7932AB20970C2600FF0F55 /* Assets.xcassets in Resources */,
 				BB7932A620970C2600FF0F55 /* Main.storyboard in Resources */,
 			);
@@ -161,16 +243,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1480C18F318CF6AAF86269EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nicola-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59F84B6C8C4DB494967E7FEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nicola/Pods-Nicola-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7E7C4DFF25AF4705C366E6F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Nicola/Pods-Nicola-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nicola/Pods-Nicola-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BB79329720970C2600FF0F55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BB7932A320970C2600FF0F55 /* ViewController.m in Sources */,
+				8478BABB20AAC49D0076919D /* NewsObject.m in Sources */,
+				8478BABE20AACB010076919D /* NewsDetailsViewController.m in Sources */,
 				BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */,
 				BB7932B120970C2600FF0F55 /* main.m in Sources */,
+				8478BAAC20AABA530076919D /* NewsViewController.m in Sources */,
 				84C428E520A4213000736E42 /* HomeViewController.m in Sources */,
+				8478BAC120AACB2B0076919D /* NewsDetailsTableViewCell.m in Sources */,
+				8478BAB820AAC4440076919D /* RHWebServiceManager.m in Sources */,
 				BB7932A920970C2600FF0F55 /* Nicola.xcdatamodeld in Sources */,
+				8478BAB420AABB600076919D /* NewsTableViewCell.m in Sources */,
+				8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +446,7 @@
 		};
 		BB7932B520970C2600FF0F55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5711034159D6D14D12BC5D39 /* Pods-Nicola.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -319,6 +464,7 @@
 		};
 		BB7932B620970C2600FF0F55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C9DE0CDD701F679A82AB9E0 /* Pods-Nicola.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
