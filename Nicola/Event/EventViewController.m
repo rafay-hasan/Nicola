@@ -11,6 +11,7 @@
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
 #import "EventObject.h"
+#import "EventDetailsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface EventViewController ()<UITableViewDelegate,UITableViewDataSource,RHWebServiceDelegate>
@@ -129,6 +130,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.eventObject = [self.eventArray objectAtIndex:indexPath.row];
+    EventDetailsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"eventDetails"];
+    vc.object = self.eventObject;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

@@ -12,6 +12,7 @@
 		8401AD6B20B55CCB00B5F3C0 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */; };
 		8401AD6E20B5667C00B5F3C0 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6D20B5667B00B5F3C0 /* EventTableViewCell.m */; };
 		8401AD7120B56F1000B5F3C0 /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD7020B56F1000B5F3C0 /* EventObject.m */; };
+		8401AD7420B578AF00B5F3C0 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD7320B578AF00B5F3C0 /* EventDetailsViewController.m */; };
 		8478BAAC20AABA530076919D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAAB20AABA530076919D /* NewsViewController.m */; };
 		8478BAAE20AABA6E0076919D /* NewsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478BAAD20AABA6E0076919D /* NewsHeader.xib */; };
 		8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAB020AABA8F0076919D /* NewsHeader.m */; };
@@ -42,6 +43,8 @@
 		8401AD6D20B5667B00B5F3C0 /* EventTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		8401AD6F20B56F1000B5F3C0 /* EventObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventObject.h; sourceTree = "<group>"; };
 		8401AD7020B56F1000B5F3C0 /* EventObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventObject.m; sourceTree = "<group>"; };
+		8401AD7220B578AF00B5F3C0 /* EventDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		8401AD7320B578AF00B5F3C0 /* EventDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		8478BAAA20AABA530076919D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		8478BAAB20AABA530076919D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		8478BAAD20AABA6E0076919D /* NewsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsHeader.xib; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */,
 				8401AD6C20B5667B00B5F3C0 /* EventTableViewCell.h */,
 				8401AD6D20B5667B00B5F3C0 /* EventTableViewCell.m */,
+				8401AD7220B578AF00B5F3C0 /* EventDetailsViewController.h */,
+				8401AD7320B578AF00B5F3C0 /* EventDetailsViewController.m */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				8401AD6B20B55CCB00B5F3C0 /* EventViewController.m in Sources */,
 				BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */,
 				BB7932B120970C2600FF0F55 /* main.m in Sources */,
+				8401AD7420B578AF00B5F3C0 /* EventDetailsViewController.m in Sources */,
 				8478BAAC20AABA530076919D /* NewsViewController.m in Sources */,
 				8401AD6720B55C7A00B5F3C0 /* ClubHistoryViewController.m in Sources */,
 				84C428E520A4213000736E42 /* HomeViewController.m in Sources */,

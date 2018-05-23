@@ -80,36 +80,14 @@
     [manager POST:requestURL parameters:postDataDic progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         if([self.delegate conformsToProtocol:@protocol(RHWebServiceDelegate)])
         {
-//            if(self.requestType == HTTPRequestypeUserDetails)
-//            {
-//                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
-//                {
-//
-//                    [self.delegate dataFromWebReceivedSuccessfully:responseObject];
-//                }
-//            }
-//            else if(self.requestType == HTTPRequestTypePharmacySearch || self.requestType == HTTPRequestTypePharmacySearchForCurrentLocation)
-//            {
-//                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
-//                {
-//
-//                    [self.delegate dataFromWebReceivedSuccessfully:[self parseAllPharmacyItems:responseObject]];
-//                }
-//            }
-//            else if(self.requestType == HTTPRequestTypeProductSearch)
-//            {
-//                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
-//                {
-//
-//                    [self.delegate dataFromWebReceivedSuccessfully:[self parseAllProducts:responseObject]];
-//                }
-//            }
-//            else {
-//                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
-//                {
-//                    [self.delegate dataFromWebReceivedSuccessfully:responseObject];
-//                }
-//            }
+            if(self.requestType == HTTPRequestypeLogin)
+            {
+                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                {
+
+                    [self.delegate dataFromWebReceivedSuccessfully:responseObject];
+                }
+            }
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         if([self.delegate conformsToProtocol:@protocol(RHWebServiceDelegate)])
