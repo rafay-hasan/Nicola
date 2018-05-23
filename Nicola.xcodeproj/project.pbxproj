@@ -10,6 +10,7 @@
 		16DC54C9097FDE00D48B1D87 /* libPods-Nicola.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC929AD19CFDD89588A0A0 /* libPods-Nicola.a */; };
 		8401AD6720B55C7A00B5F3C0 /* ClubHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6620B55C7A00B5F3C0 /* ClubHistoryViewController.m */; };
 		8401AD6B20B55CCB00B5F3C0 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */; };
+		8401AD6E20B5667C00B5F3C0 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6D20B5667B00B5F3C0 /* EventTableViewCell.m */; };
 		8478BAAC20AABA530076919D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAAB20AABA530076919D /* NewsViewController.m */; };
 		8478BAAE20AABA6E0076919D /* NewsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478BAAD20AABA6E0076919D /* NewsHeader.xib */; };
 		8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAB020AABA8F0076919D /* NewsHeader.m */; };
@@ -36,6 +37,8 @@
 		8401AD6620B55C7A00B5F3C0 /* ClubHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubHistoryViewController.m; sourceTree = "<group>"; };
 		8401AD6920B55CCB00B5F3C0 /* EventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		8401AD6C20B5667B00B5F3C0 /* EventTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
+		8401AD6D20B5667B00B5F3C0 /* EventTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		8478BAAA20AABA530076919D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		8478BAAB20AABA530076919D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		8478BAAD20AABA6E0076919D /* NewsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsHeader.xib; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 			children = (
 				8401AD6920B55CCB00B5F3C0 /* EventViewController.h */,
 				8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */,
+				8401AD6C20B5667B00B5F3C0 /* EventTableViewCell.h */,
+				8401AD6D20B5667B00B5F3C0 /* EventTableViewCell.m */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				BB7932A920970C2600FF0F55 /* Nicola.xcdatamodeld in Sources */,
 				8478BAB420AABB600076919D /* NewsTableViewCell.m in Sources */,
 				8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */,
+				8401AD6E20B5667C00B5F3C0 /* EventTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
