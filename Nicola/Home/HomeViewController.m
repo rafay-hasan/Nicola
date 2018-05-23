@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "NewsViewController.h"
+#import "EventViewController.h"
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong,nonatomic) NSArray *menuArray;
@@ -62,6 +63,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 1) {
         NewsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"news"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 2) {
+        EventViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"event"];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

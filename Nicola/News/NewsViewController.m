@@ -23,6 +23,7 @@
 @property (strong,nonatomic) RHWebServiceManager *myWebService;
 @property (strong,nonatomic) NewsObject *newsObject;
 @property (strong,nonatomic) NSMutableArray *newsArray;
+- (IBAction)homeButtonAction:(id)sender;
 
 @end
 
@@ -138,4 +139,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)homeButtonAction:(id)sender {
+    NSArray *array = [self.navigationController viewControllers];
+    [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
+}
 @end

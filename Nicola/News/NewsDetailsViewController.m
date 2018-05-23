@@ -15,6 +15,7 @@
 
 @property (strong,nonatomic) NewsHeader *myHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *newsDetailsTableview;
+- (IBAction)homeButtonAction:(id)sender;
 
 @end
 
@@ -65,4 +66,8 @@
     return cell;
 }
 
+- (IBAction)homeButtonAction:(id)sender {
+    NSArray *array = [self.navigationController viewControllers];
+    [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
+}
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16DC54C9097FDE00D48B1D87 /* libPods-Nicola.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CC929AD19CFDD89588A0A0 /* libPods-Nicola.a */; };
+		8401AD6720B55C7A00B5F3C0 /* ClubHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6620B55C7A00B5F3C0 /* ClubHistoryViewController.m */; };
+		8401AD6B20B55CCB00B5F3C0 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */; };
 		8478BAAC20AABA530076919D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAAB20AABA530076919D /* NewsViewController.m */; };
 		8478BAAE20AABA6E0076919D /* NewsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478BAAD20AABA6E0076919D /* NewsHeader.xib */; };
 		8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAB020AABA8F0076919D /* NewsHeader.m */; };
@@ -30,6 +32,10 @@
 		09CC929AD19CFDD89588A0A0 /* libPods-Nicola.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nicola.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9DE0CDD701F679A82AB9E0 /* Pods-Nicola.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nicola.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nicola/Pods-Nicola.release.xcconfig"; sourceTree = "<group>"; };
 		5711034159D6D14D12BC5D39 /* Pods-Nicola.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nicola.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nicola/Pods-Nicola.debug.xcconfig"; sourceTree = "<group>"; };
+		8401AD6520B55C7A00B5F3C0 /* ClubHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClubHistoryViewController.h; sourceTree = "<group>"; };
+		8401AD6620B55C7A00B5F3C0 /* ClubHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubHistoryViewController.m; sourceTree = "<group>"; };
+		8401AD6920B55CCB00B5F3C0 /* EventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		8478BAAA20AABA530076919D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		8478BAAB20AABA530076919D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		8478BAAD20AABA6E0076919D /* NewsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsHeader.xib; sourceTree = "<group>"; };
@@ -87,6 +93,24 @@
 				09CC929AD19CFDD89588A0A0 /* libPods-Nicola.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8401AD6420B55C5200B5F3C0 /* Club history */ = {
+			isa = PBXGroup;
+			children = (
+				8401AD6520B55C7A00B5F3C0 /* ClubHistoryViewController.h */,
+				8401AD6620B55C7A00B5F3C0 /* ClubHistoryViewController.m */,
+			);
+			path = "Club history";
+			sourceTree = "<group>";
+		};
+		8401AD6820B55CB500B5F3C0 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8401AD6920B55CCB00B5F3C0 /* EventViewController.h */,
+				8401AD6A20B55CCB00B5F3C0 /* EventViewController.m */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		8478BAB520AAC42C0076919D /* Webservice */ = {
@@ -162,6 +186,8 @@
 				84C428E120A420F600736E42 /* Log in */,
 				84C428E220A4211100736E42 /* Home */,
 				848A3A5720AAAE7A00A85CC4 /* News */,
+				8401AD6420B55C5200B5F3C0 /* Club history */,
+				8401AD6820B55CB500B5F3C0 /* Event */,
 				BB7932A420970C2600FF0F55 /* Main.storyboard */,
 				8478BAAD20AABA6E0076919D /* NewsHeader.xib */,
 				BB7932AA20970C2600FF0F55 /* Assets.xcassets */,
@@ -306,9 +332,11 @@
 				BB7932A320970C2600FF0F55 /* ViewController.m in Sources */,
 				8478BABB20AAC49D0076919D /* NewsObject.m in Sources */,
 				8478BABE20AACB010076919D /* NewsDetailsViewController.m in Sources */,
+				8401AD6B20B55CCB00B5F3C0 /* EventViewController.m in Sources */,
 				BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */,
 				BB7932B120970C2600FF0F55 /* main.m in Sources */,
 				8478BAAC20AABA530076919D /* NewsViewController.m in Sources */,
+				8401AD6720B55C7A00B5F3C0 /* ClubHistoryViewController.m in Sources */,
 				84C428E520A4213000736E42 /* HomeViewController.m in Sources */,
 				8478BAC120AACB2B0076919D /* NewsDetailsTableViewCell.m in Sources */,
 				8478BAB820AAC4440076919D /* RHWebServiceManager.m in Sources */,
