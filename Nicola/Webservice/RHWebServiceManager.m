@@ -8,6 +8,7 @@
 
 #import "RHWebServiceManager.h"
 #import "NewsObject.h"
+#import "EventObject.h"
 
 @implementation RHWebServiceManager
 
@@ -37,6 +38,14 @@
                 {
                     
                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllNewsItems:responseObject]];
+                }
+            }
+            else if(self.requestType == HTTPRequestypeEvent)
+            {
+                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                {
+                    
+                    [self.delegate dataFromWebReceivedSuccessfully:[self parseAllEventsItems:responseObject]];
                 }
             }
             else {
@@ -177,6 +186,86 @@
 
 }
 
-
+-(NSMutableArray *) parseAllEventsItems :(id) response
+{
+    NSMutableArray *EventsItemsArray = [NSMutableArray new];
+    
+    if([[response valueForKey:@"json_value"] isKindOfClass:[NSArray class]])
+    {
+        NSArray *tempArray = [(NSArray *)response valueForKey:@"json_value"];
+        for(NSInteger i = 0; i < tempArray.count; i++)
+        {
+            EventObject *object = [EventObject new];
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"events_race_title"] isKindOfClass:[NSString class]])
+            {
+                object.eventTitle = [[tempArray objectAtIndex:i] valueForKey:@"events_race_title"];
+            }
+            else
+            {
+                object.eventTitle = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"events_race_details"] isKindOfClass:[NSString class]])
+            {
+                object.eventDetails = [[tempArray objectAtIndex:i] valueForKey:@"events_race_details"];
+            }
+            else
+            {
+                object.eventDetails = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"events_race_location"] isKindOfClass:[NSString class]])
+            {
+                object.eventLocation = [[tempArray objectAtIndex:i] valueForKey:@"events_race_location"];
+            }
+            else
+            {
+                object.eventLocation = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"events_race_cover_photo_path"] isKindOfClass:[NSString class]])
+            {
+                object.eventImageUrlStr = [NSString stringWithFormat:@"%@%@",BASE_URL_API,[[tempArray objectAtIndex:i] valueForKey:@"events_race_cover_photo_path"]];
+            }
+            else
+            {
+                object.eventImageUrlStr = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"events_race_starting_time"] isKindOfClass:[NSString class]])
+            {
+                object.eventStartTime = [[tempArray objectAtIndex:i] valueForKey:@"events_race_starting_time"];
+            }
+            else
+            {
+                object.eventStartTime = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"events_race_ending_time"] isKindOfClass:[NSString class]])
+            {
+                object.eventEndTime = [[tempArray objectAtIndex:i] valueForKey:@"events_race_ending_time"];
+            }
+            else
+            {
+                object.eventEndTime = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"events_race_starting_date"] isKindOfClass:[NSString class]])
+            {
+                object.eventDate = [[tempArray objectAtIndex:i] valueForKey:@"events_race_starting_date"];
+            }
+            else
+            {
+                object.eventDate = @"";
+            }
+            
+            [EventsItemsArray addObject:object];
+        }
+        
+    }
+    return EventsItemsArray;
+    
+}
 
 @end

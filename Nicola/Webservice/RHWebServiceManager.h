@@ -11,9 +11,11 @@
 
 #define BASE_URL_API @"http://bulegas.whatsupitec.com/"
 #define News_URL_API @"api_news_by_limit/"
+#define Events_URL_API @"api_race_events_by_limit/"
 
 enum {
-    HTTPRequestypeNews
+    HTTPRequestypeNews,
+    HTTPRequestypeEvent
 };
 typedef NSUInteger HTTPRequestType;
 

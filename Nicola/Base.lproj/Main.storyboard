@@ -591,7 +591,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVb-oT-Yyn">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
                                                         <connections>
-                                                            <action selector="homeButtonAction:" destination="rse-Y7-u5m" eventType="touchUpInside" id="a1A-ZE-aHM"/>
+                                                            <action selector="homeButtonAction:" destination="jL7-wE-YO5" eventType="touchUpInside" id="8L6-HF-JaC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
