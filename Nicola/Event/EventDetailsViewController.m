@@ -7,9 +7,15 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "EventDetailsTableViewCell.h"
+#import "MXParallaxHeader.h"
+#import "NewsHeader.h"
 
-@interface EventDetailsViewController ()
+@interface EventDetailsViewController ()<UITableViewDataSource,UITableViewDelegate>
 - (IBAction)homeButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *eventDetailsTableview;
+
+@property (strong,nonatomic) NewsHeader *myHeaderView;
 
 @end
 
@@ -18,6 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.myHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"NewsHeader" owner:self options:nil] objectAtIndex:0];
+    self.eventDetailsTableview.parallaxHeader.view = self.myHeaderView;
+    self.eventDetailsTableview.parallaxHeader.height = 263;
+    self.eventDetailsTableview.parallaxHeader.mode = MXParallaxHeaderModeFill;
+    self.eventDetailsTableview.parallaxHeader.minimumHeight = 240;
+    self.eventDetailsTableview.estimatedRowHeight = 215;
+    self.eventDetailsTableview.rowHeight = UITableViewAutomaticDimension;
+    
+    self.myHeaderView.titleLabel.text = @"Le prossime gare ed eventi";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,4 +54,41 @@
     NSArray *array = [self.navigationController viewControllers];
     [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    EventDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventDetailsCell" forIndexPath:indexPath];
+    cell.titleLabel.text = self.object.eventTitle;
+    cell.detailsLabel.text = self.object.eventDetails;
+    cell.locationLabel.text = self.object.eventLocation;
+    cell.startDateLabel.text = self.object.eventStartTime;
+    cell.endDateLabel.text = self.object.eventEndTime;
+    cell.timeLabel.text = self.object.eventDate;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = [UIColor clearColor];
+    return headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    return footerView;
+}
+
+
+
 @end

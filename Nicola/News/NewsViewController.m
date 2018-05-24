@@ -38,6 +38,8 @@
     self.newsTableview.parallaxHeader.mode = MXParallaxHeaderModeFill;
     self.newsTableview.parallaxHeader.minimumHeight = 240;
     self.newsArray = [NSMutableArray new];
+    
+    self.myHeaderView.titleLabel.text = @"La ultime  notizie";
     [self CallNewsWebservice];
 }
 
