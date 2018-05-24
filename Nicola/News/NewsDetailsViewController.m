@@ -29,7 +29,8 @@
     self.newsDetailsTableview.parallaxHeader.height = 263;
     self.newsDetailsTableview.parallaxHeader.mode = MXParallaxHeaderModeFill;
     self.newsDetailsTableview.parallaxHeader.minimumHeight = 240;
-    
+    self.myHeaderView.titleLabel.text = @"La ultime  notizie";
+    self.myHeaderView.bannerImageview.image = [UIImage imageNamed:@"news_pic"];
     self.newsDetailsTableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
 }

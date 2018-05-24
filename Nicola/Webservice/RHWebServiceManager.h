@@ -13,11 +13,13 @@
 #define News_URL_API @"api_news_by_limit/"
 #define Events_URL_API @"api_race_events_by_limit/"
 #define Login_URL_API @"api_login_authentication_ios"
+#define ClubHistory_URL_API @"api_club_history"
 
 enum {
     HTTPRequestypeNews,
     HTTPRequestypeEvent,
-    HTTPRequestypeLogin
+    HTTPRequestypeLogin,
+    HTTPRequestypeClubHistory
 };
 typedef NSUInteger HTTPRequestType;
 

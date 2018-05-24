@@ -22,6 +22,7 @@
 		8478BABE20AACB010076919D /* NewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BABD20AACB010076919D /* NewsDetailsViewController.m */; };
 		8478BAC120AACB2B0076919D /* NewsDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAC020AACB2B0076919D /* NewsDetailsTableViewCell.m */; };
 		847AE1EB20B684EA001353F7 /* EventDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847AE1EA20B684EA001353F7 /* EventDetailsTableViewCell.m */; };
+		847AE1EE20B68E6E001353F7 /* ClubHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847AE1ED20B68E6E001353F7 /* ClubHistoryTableViewCell.m */; };
 		84C428E520A4213000736E42 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C428E420A4213000736E42 /* HomeViewController.m */; };
 		BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79329F20970C2600FF0F55 /* AppDelegate.m */; };
 		BB7932A320970C2600FF0F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7932A220970C2600FF0F55 /* ViewController.m */; };
@@ -63,6 +64,8 @@
 		8478BAC020AACB2B0076919D /* NewsDetailsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsTableViewCell.m; sourceTree = "<group>"; };
 		847AE1E920B684EA001353F7 /* EventDetailsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailsTableViewCell.h; sourceTree = "<group>"; };
 		847AE1EA20B684EA001353F7 /* EventDetailsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailsTableViewCell.m; sourceTree = "<group>"; };
+		847AE1EC20B68E6E001353F7 /* ClubHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClubHistoryTableViewCell.h; sourceTree = "<group>"; };
+		847AE1ED20B68E6E001353F7 /* ClubHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubHistoryTableViewCell.m; sourceTree = "<group>"; };
 		84C428E320A4213000736E42 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		84C428E420A4213000736E42 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		BB79329B20970C2600FF0F55 /* Nicola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nicola.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +115,8 @@
 			children = (
 				8401AD6520B55C7A00B5F3C0 /* ClubHistoryViewController.h */,
 				8401AD6620B55C7A00B5F3C0 /* ClubHistoryViewController.m */,
+				847AE1EC20B68E6E001353F7 /* ClubHistoryTableViewCell.h */,
+				847AE1ED20B68E6E001353F7 /* ClubHistoryTableViewCell.m */,
 			);
 			path = "Club history";
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				8478BAAC20AABA530076919D /* NewsViewController.m in Sources */,
 				8401AD6720B55C7A00B5F3C0 /* ClubHistoryViewController.m in Sources */,
 				84C428E520A4213000736E42 /* HomeViewController.m in Sources */,
+				847AE1EE20B68E6E001353F7 /* ClubHistoryTableViewCell.m in Sources */,
 				8478BAC120AACB2B0076919D /* NewsDetailsTableViewCell.m in Sources */,
 				8478BAB820AAC4440076919D /* RHWebServiceManager.m in Sources */,
 				BB7932A920970C2600FF0F55 /* Nicola.xcdatamodeld in Sources */,

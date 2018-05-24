@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "NewsViewController.h"
 #import "EventViewController.h"
+#import "ClubHistoryViewController.h"
+
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong,nonatomic) NSArray *menuArray;
@@ -61,7 +63,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 1) {
+    if (indexPath.row == 0) {
+        ClubHistoryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"history"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.row == 1) {
         NewsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"news"];
         [self.navigationController pushViewController:vc animated:YES];
     }

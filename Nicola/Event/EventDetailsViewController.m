@@ -33,6 +33,7 @@
     self.eventDetailsTableview.rowHeight = UITableViewAutomaticDimension;
     
     self.myHeaderView.titleLabel.text = @"Le prossime gare ed eventi";
+    self.myHeaderView.bannerImageview.image = [UIImage imageNamed:@"news_pic"];
 }
 
 - (void)didReceiveMemoryWarning {
