@@ -63,18 +63,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
-        ClubHistoryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"history"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    else if (indexPath.row == 1) {
-        NewsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"news"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    else if (indexPath.row == 2) {
-        EventViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"event"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    [UIView transitionWithView:self.menuTableview
+                      duration:0.4
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.menuTableheight.constant = 0;
+                        if (indexPath.row == 0) {
+                            ClubHistoryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"history"];
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                        else if (indexPath.row == 1) {
+                            NewsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"news"];
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                        else if (indexPath.row == 2) {
+                            EventViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"event"];
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                    }
+                    completion:NULL];
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
