@@ -27,6 +27,10 @@
 		849F9E3920BBCDD200202A3D /* AwardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849F9E3820BBCDD200202A3D /* AwardCollectionViewCell.m */; };
 		849F9E3C20BBD20000202A3D /* AwardHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 849F9E3B20BBD20000202A3D /* AwardHistory.m */; };
 		84C428E520A4213000736E42 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C428E420A4213000736E42 /* HomeViewController.m */; };
+		BB292CDB20BC76D500118553 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDA20BC76D500118553 /* ChatViewController.m */; };
+		BB292CDE20BC7A3F00118553 /* AwardHistoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDD20BC7A3F00118553 /* AwardHistoryDetailsViewController.m */; };
+		BB292CE120BC7ABF00118553 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDF20BC7ABE00118553 /* KASlideShow.m */; };
+		BB292CE520BC812900118553 /* AwardDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CE420BC812900118553 /* AwardDetailsTableViewCell.m */; };
 		BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79329F20970C2600FF0F55 /* AppDelegate.m */; };
 		BB7932A320970C2600FF0F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7932A220970C2600FF0F55 /* ViewController.m */; };
 		BB7932A620970C2600FF0F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB7932A420970C2600FF0F55 /* Main.storyboard */; };
@@ -77,6 +81,14 @@
 		849F9E3B20BBD20000202A3D /* AwardHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AwardHistory.m; sourceTree = "<group>"; };
 		84C428E320A4213000736E42 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		84C428E420A4213000736E42 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		BB292CD920BC76D500118553 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		BB292CDA20BC76D500118553 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		BB292CDC20BC7A3F00118553 /* AwardHistoryDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardHistoryDetailsViewController.h; sourceTree = "<group>"; };
+		BB292CDD20BC7A3F00118553 /* AwardHistoryDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AwardHistoryDetailsViewController.m; sourceTree = "<group>"; };
+		BB292CDF20BC7ABE00118553 /* KASlideShow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
+		BB292CE020BC7ABE00118553 /* KASlideShow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KASlideShow.h; sourceTree = "<group>"; };
+		BB292CE320BC812900118553 /* AwardDetailsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardDetailsTableViewCell.h; sourceTree = "<group>"; };
+		BB292CE420BC812900118553 /* AwardDetailsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AwardDetailsTableViewCell.m; sourceTree = "<group>"; };
 		BB79329B20970C2600FF0F55 /* Nicola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nicola.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB79329E20970C2600FF0F55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB79329F20970C2600FF0F55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -184,6 +196,10 @@
 				849F9E3520BBC92B00202A3D /* AwardHistoryViewController.m */,
 				849F9E3720BBCDD200202A3D /* AwardCollectionViewCell.h */,
 				849F9E3820BBCDD200202A3D /* AwardCollectionViewCell.m */,
+				BB292CDC20BC7A3F00118553 /* AwardHistoryDetailsViewController.h */,
+				BB292CDD20BC7A3F00118553 /* AwardHistoryDetailsViewController.m */,
+				BB292CE320BC812900118553 /* AwardDetailsTableViewCell.h */,
+				BB292CE420BC812900118553 /* AwardDetailsTableViewCell.m */,
 			);
 			path = "Award history";
 			sourceTree = "<group>";
@@ -204,6 +220,24 @@
 				84C428E420A4213000736E42 /* HomeViewController.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		BB292CD820BC76B900118553 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				BB292CD920BC76D500118553 /* ChatViewController.h */,
+				BB292CDA20BC76D500118553 /* ChatViewController.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		BB292CE220BC7AC600118553 /* KASlider */ = {
+			isa = PBXGroup;
+			children = (
+				BB292CE020BC7ABE00118553 /* KASlideShow.h */,
+				BB292CDF20BC7ABE00118553 /* KASlideShow.m */,
+			);
+			path = KASlider;
 			sourceTree = "<group>";
 		};
 		BB79329220970C2600FF0F55 = {
@@ -229,6 +263,7 @@
 			children = (
 				BB79329E20970C2600FF0F55 /* AppDelegate.h */,
 				BB79329F20970C2600FF0F55 /* AppDelegate.m */,
+				BB292CE220BC7AC600118553 /* KASlider */,
 				8478BAB520AAC42C0076919D /* Webservice */,
 				84C428E120A420F600736E42 /* Log in */,
 				84C428E220A4211100736E42 /* Home */,
@@ -236,6 +271,7 @@
 				8401AD6420B55C5200B5F3C0 /* Club history */,
 				8401AD6820B55CB500B5F3C0 /* Event */,
 				849F9E3320BBC8F900202A3D /* Award history */,
+				BB292CD820BC76B900118553 /* Chat */,
 				BB7932A420970C2600FF0F55 /* Main.storyboard */,
 				8478BAAD20AABA6E0076919D /* NewsHeader.xib */,
 				BB7932AA20970C2600FF0F55 /* Assets.xcassets */,
@@ -389,15 +425,19 @@
 				BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */,
 				BB7932B120970C2600FF0F55 /* main.m in Sources */,
 				8401AD7420B578AF00B5F3C0 /* EventDetailsViewController.m in Sources */,
+				BB292CE120BC7ABF00118553 /* KASlideShow.m in Sources */,
+				BB292CDE20BC7A3F00118553 /* AwardHistoryDetailsViewController.m in Sources */,
 				8478BAAC20AABA530076919D /* NewsViewController.m in Sources */,
 				8401AD6720B55C7A00B5F3C0 /* ClubHistoryViewController.m in Sources */,
 				84C428E520A4213000736E42 /* HomeViewController.m in Sources */,
 				847AE1EE20B68E6E001353F7 /* ClubHistoryTableViewCell.m in Sources */,
+				BB292CE520BC812900118553 /* AwardDetailsTableViewCell.m in Sources */,
 				8478BAC120AACB2B0076919D /* NewsDetailsTableViewCell.m in Sources */,
 				8478BAB820AAC4440076919D /* RHWebServiceManager.m in Sources */,
 				BB7932A920970C2600FF0F55 /* Nicola.xcdatamodeld in Sources */,
 				8478BAB420AABB600076919D /* NewsTableViewCell.m in Sources */,
 				8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */,
+				BB292CDB20BC76D500118553 /* ChatViewController.m in Sources */,
 				8401AD6E20B5667C00B5F3C0 /* EventTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

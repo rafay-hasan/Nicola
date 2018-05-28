@@ -13,6 +13,7 @@
 #import "AwardHistory.h"
 #import "NewsHeader.h"
 #import "AwardCollectionViewCell.h"
+#import "AwardHistoryDetailsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface AwardHistoryViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,RHWebServiceDelegate>
@@ -141,7 +142,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.awardObject = [self.awardArray objectAtIndex:indexPath.row];
+    AwardHistoryDetailsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"awardDetails"];
+    vc.object = self.awardObject;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

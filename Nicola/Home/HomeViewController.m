@@ -11,6 +11,7 @@
 #import "EventViewController.h"
 #import "ClubHistoryViewController.h"
 #import "AwardHistoryViewController.h"
+#import "ChatViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -83,6 +84,10 @@
                         }
                         else if (indexPath.row == 3) {
                             AwardHistoryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"award"];
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                        else if (indexPath.row == 5) {
+                            ChatViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"chat"];
                             [self.navigationController pushViewController:vc animated:YES];
                         }
                     }
