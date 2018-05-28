@@ -10,7 +10,6 @@
 
 @interface NewsObject : NSObject
 
-@property (strong,nonatomic) NSString *newsTitle, *newsImageUrlStr, *newsDateStr;
-@property (strong,nonatomic) NSAttributedString *newsDetails;
+@property (strong,nonatomic) NSString *newsTitle, *newsImageUrlStr, *newsDateStr,*newsDetailsString;
 
 @end

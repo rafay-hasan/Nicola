@@ -121,7 +121,7 @@
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell" forIndexPath:indexPath];
     self.newsObject = [self.newsArray objectAtIndex:indexPath.row];
     cell.newsTitle.text = self.newsObject.newsTitle;
-    cell.newsDetails.attributedText = self.newsObject.newsDetails;
+    cell.newsDetails.text = self.newsObject.newsDetailsString;
     cell.newsCreationDate.text = self.newsObject.newsDateStr;
     if (self.newsObject.newsImageUrlStr.length > 0) {
         [cell.newsImageView sd_setImageWithURL:[NSURL URLWithString:self.newsObject.newsImageUrlStr]

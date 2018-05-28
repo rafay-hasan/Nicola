@@ -9,6 +9,7 @@
 #import "RHWebServiceManager.h"
 #import "NewsObject.h"
 #import "EventObject.h"
+#import "AwardHistory.h"
 
 @implementation RHWebServiceManager
 
@@ -46,6 +47,13 @@
                 {
                     
                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllEventsItems:responseObject]];
+                }
+            }
+            else if(self.requestType == HTTPRequestypeAwardHistory)
+            {
+                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                {
+                    [self.delegate dataFromWebReceivedSuccessfully:[self parseAllAwardHistoryItems:responseObject]];
                 }
             }
             else {
@@ -131,11 +139,16 @@
             
             if([[[tempArray objectAtIndex:i] valueForKey:@"news_description"] isKindOfClass:[NSString class]])
             {
-                object.newsDetails = [[NSAttributedString alloc]initWithString:[[tempArray objectAtIndex:i] valueForKey:@"news_description"]];
+                NSAttributedString *attr = [[NSAttributedString alloc] initWithData:[[[tempArray objectAtIndex:i] valueForKey:@"news_description"] dataUsingEncoding:NSUTF8StringEncoding]
+                                                                            options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                      NSCharacterEncodingDocumentAttribute:@(NSUTF8StringEncoding)}
+                                                                 documentAttributes:nil
+                                                                              error:nil];
+                object.newsDetailsString = [attr string];
             }
             else
             {
-                object.newsDetails = [[NSAttributedString alloc]initWithString:@""];
+                object.newsDetailsString = @"";
             }
             
             if([[[tempArray objectAtIndex:i] valueForKey:@"news_created_edited_date_time"] isKindOfClass:[NSString class]])
@@ -163,6 +176,69 @@
     return NewsItemsArray;
 
 }
+
+-(NSMutableArray *) parseAllAwardHistoryItems :(id) response
+{
+    NSMutableArray *awardItemsArray = [NSMutableArray new];
+    
+    if([[response valueForKey:@"json_value"] isKindOfClass:[NSArray class]])
+    {
+        NSArray *tempArray = [(NSArray *)response valueForKey:@"json_value"];
+        
+        for(NSInteger i = 0; i < tempArray.count; i++)
+        {
+            AwardHistory *object = [AwardHistory new];
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"award_history_title"] isKindOfClass:[NSString class]])
+            {
+                object.awardTitle = [[tempArray objectAtIndex:i] valueForKey:@"award_history_title"];
+            }
+            else
+            {
+                object.awardTitle = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"award_history_details"] isKindOfClass:[NSString class]])
+            {
+                NSAttributedString *attr = [[NSAttributedString alloc] initWithData:[[[tempArray objectAtIndex:i] valueForKey:@"award_history_details"] dataUsingEncoding:NSUTF8StringEncoding]
+                                                                            options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                      NSCharacterEncodingDocumentAttribute:@(NSUTF8StringEncoding)}
+                                                                 documentAttributes:nil
+                                                                              error:nil];
+                object.awardDetails = [attr string];
+            }
+            else
+            {
+                object.awardDetails = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"award_history_images_path"] isKindOfClass:[NSString class]])
+            {
+                object.awardHistoryImageUrlString = [NSString stringWithFormat:@"%@%@",BASE_URL_API,[[tempArray objectAtIndex:i] valueForKey:@"award_history_images_path"]];
+            }
+            else
+            {
+                object.awardHistoryImageUrlString = @"";
+            }
+            
+            if([[[tempArray objectAtIndex:i] valueForKey:@"award_history_cover_photo_path"] isKindOfClass:[NSString class]])
+            {
+                object.awardCoverPhotoUrlString = [NSString stringWithFormat:@"%@%@",BASE_URL_API,[[tempArray objectAtIndex:i] valueForKey:@"award_history_cover_photo_path"]];
+            }
+            else
+            {
+                object.awardCoverPhotoUrlString = @"";
+            }
+            
+            [awardItemsArray addObject:object];
+        }
+
+    }
+    
+    return awardItemsArray;
+    
+}
+
 
 -(NSMutableArray *) parseAllEventsItems :(id) response
 {

@@ -61,7 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsDetails" forIndexPath:indexPath];
     cell.titleLabel.text = self.object.newsTitle;
-    cell.detailsLabel.attributedText = self.object.newsDetails;
+    cell.detailsLabel.text = self.object.newsDetailsString;
     cell.dateLabel.text = self.object.newsDateStr;
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;

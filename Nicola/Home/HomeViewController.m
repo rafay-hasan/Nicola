@@ -10,6 +10,7 @@
 #import "NewsViewController.h"
 #import "EventViewController.h"
 #import "ClubHistoryViewController.h"
+#import "AwardHistoryViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -78,6 +79,10 @@
                         }
                         else if (indexPath.row == 2) {
                             EventViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"event"];
+                            [self.navigationController pushViewController:vc animated:YES];
+                        }
+                        else if (indexPath.row == 3) {
+                            AwardHistoryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"award"];
                             [self.navigationController pushViewController:vc animated:YES];
                         }
                     }

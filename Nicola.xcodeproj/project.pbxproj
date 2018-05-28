@@ -23,6 +23,9 @@
 		8478BAC120AACB2B0076919D /* NewsDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAC020AACB2B0076919D /* NewsDetailsTableViewCell.m */; };
 		847AE1EB20B684EA001353F7 /* EventDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847AE1EA20B684EA001353F7 /* EventDetailsTableViewCell.m */; };
 		847AE1EE20B68E6E001353F7 /* ClubHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847AE1ED20B68E6E001353F7 /* ClubHistoryTableViewCell.m */; };
+		849F9E3620BBC92B00202A3D /* AwardHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849F9E3520BBC92B00202A3D /* AwardHistoryViewController.m */; };
+		849F9E3920BBCDD200202A3D /* AwardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849F9E3820BBCDD200202A3D /* AwardCollectionViewCell.m */; };
+		849F9E3C20BBD20000202A3D /* AwardHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 849F9E3B20BBD20000202A3D /* AwardHistory.m */; };
 		84C428E520A4213000736E42 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C428E420A4213000736E42 /* HomeViewController.m */; };
 		BB7932A020970C2600FF0F55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79329F20970C2600FF0F55 /* AppDelegate.m */; };
 		BB7932A320970C2600FF0F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7932A220970C2600FF0F55 /* ViewController.m */; };
@@ -66,6 +69,12 @@
 		847AE1EA20B684EA001353F7 /* EventDetailsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailsTableViewCell.m; sourceTree = "<group>"; };
 		847AE1EC20B68E6E001353F7 /* ClubHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClubHistoryTableViewCell.h; sourceTree = "<group>"; };
 		847AE1ED20B68E6E001353F7 /* ClubHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClubHistoryTableViewCell.m; sourceTree = "<group>"; };
+		849F9E3420BBC92B00202A3D /* AwardHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardHistoryViewController.h; sourceTree = "<group>"; };
+		849F9E3520BBC92B00202A3D /* AwardHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AwardHistoryViewController.m; sourceTree = "<group>"; };
+		849F9E3720BBCDD200202A3D /* AwardCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardCollectionViewCell.h; sourceTree = "<group>"; };
+		849F9E3820BBCDD200202A3D /* AwardCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AwardCollectionViewCell.m; sourceTree = "<group>"; };
+		849F9E3A20BBD20000202A3D /* AwardHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardHistory.h; sourceTree = "<group>"; };
+		849F9E3B20BBD20000202A3D /* AwardHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AwardHistory.m; sourceTree = "<group>"; };
 		84C428E320A4213000736E42 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		84C428E420A4213000736E42 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		BB79329B20970C2600FF0F55 /* Nicola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nicola.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +154,8 @@
 				8478BABA20AAC49D0076919D /* NewsObject.m */,
 				8401AD6F20B56F1000B5F3C0 /* EventObject.h */,
 				8401AD7020B56F1000B5F3C0 /* EventObject.m */,
+				849F9E3A20BBD20000202A3D /* AwardHistory.h */,
+				849F9E3B20BBD20000202A3D /* AwardHistory.m */,
 			);
 			path = Webservice;
 			sourceTree = "<group>";
@@ -164,6 +175,17 @@
 				8478BAC020AACB2B0076919D /* NewsDetailsTableViewCell.m */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		849F9E3320BBC8F900202A3D /* Award history */ = {
+			isa = PBXGroup;
+			children = (
+				849F9E3420BBC92B00202A3D /* AwardHistoryViewController.h */,
+				849F9E3520BBC92B00202A3D /* AwardHistoryViewController.m */,
+				849F9E3720BBCDD200202A3D /* AwardCollectionViewCell.h */,
+				849F9E3820BBCDD200202A3D /* AwardCollectionViewCell.m */,
+			);
+			path = "Award history";
 			sourceTree = "<group>";
 		};
 		84C428E120A420F600736E42 /* Log in */ = {
@@ -213,6 +235,7 @@
 				848A3A5720AAAE7A00A85CC4 /* News */,
 				8401AD6420B55C5200B5F3C0 /* Club history */,
 				8401AD6820B55CB500B5F3C0 /* Event */,
+				849F9E3320BBC8F900202A3D /* Award history */,
 				BB7932A420970C2600FF0F55 /* Main.storyboard */,
 				8478BAAD20AABA6E0076919D /* NewsHeader.xib */,
 				BB7932AA20970C2600FF0F55 /* Assets.xcassets */,
@@ -354,9 +377,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849F9E3920BBCDD200202A3D /* AwardCollectionViewCell.m in Sources */,
 				BB7932A320970C2600FF0F55 /* ViewController.m in Sources */,
 				847AE1EB20B684EA001353F7 /* EventDetailsTableViewCell.m in Sources */,
 				8401AD7120B56F1000B5F3C0 /* EventObject.m in Sources */,
+				849F9E3C20BBD20000202A3D /* AwardHistory.m in Sources */,
+				849F9E3620BBC92B00202A3D /* AwardHistoryViewController.m in Sources */,
 				8478BABB20AAC49D0076919D /* NewsObject.m in Sources */,
 				8478BABE20AACB010076919D /* NewsDetailsViewController.m in Sources */,
 				8401AD6B20B55CCB00B5F3C0 /* EventViewController.m in Sources */,
