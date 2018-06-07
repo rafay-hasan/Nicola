@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
+#import "User Details.h"
 
 @interface ViewController ()<RHWebServiceDelegate>
 
@@ -60,12 +61,31 @@
 {
     [SVProgressHUD dismiss];
     NSLog(@"%@",responseObj);
+    [User_Details sharedInstance].membershipId = [responseObj valueForKey:@"ref_membership_details_login_id"];
+    [User_Details sharedInstance].loginStatus = [responseObj valueForKey:@"login_status"];
+    NSLog(@"%@",[User_Details sharedInstance].membershipId);
+    if ([[responseObj valueForKey:@"membership_chat_disable"] isKindOfClass:[NSString class]]) {
+        if ([[responseObj valueForKey:@"membership_chat_disable"] isEqualToString:@"1"]) {
+            [User_Details sharedInstance].chatDisabled = YES;
+        }
+        else {
+            [User_Details sharedInstance].chatDisabled = NO;
+        }
+    }
 }
 
 -(void) dataFromWebReceiptionFailed:(NSError*) error
 {
-    NSLog(@"%@",error.debugDescription);
     [SVProgressHUD dismiss];
+    self.view.userInteractionEnabled = YES;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Message", Nil) message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)loginButtonAction:(id)sender {

@@ -31,6 +31,7 @@
 		84E0DD5F20C91CFF006C9A4C /* LeftUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD5E20C91CFF006C9A4C /* LeftUserTableViewCell.m */; };
 		84E0DD6220C922C9006C9A4C /* User Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6120C922C9006C9A4C /* User Details.m */; };
 		84E0DD6520C924A0006C9A4C /* ChatObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6420C924A0006C9A4C /* ChatObject.m */; };
+		84E0DD6920C93809006C9A4C /* JoinClubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6820C93809006C9A4C /* JoinClubViewController.m */; };
 		BB292CDB20BC76D500118553 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDA20BC76D500118553 /* ChatViewController.m */; };
 		BB292CDE20BC7A3F00118553 /* AwardHistoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDD20BC7A3F00118553 /* AwardHistoryDetailsViewController.m */; };
 		BB292CE120BC7ABF00118553 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDF20BC7ABE00118553 /* KASlideShow.m */; };
@@ -93,6 +94,8 @@
 		84E0DD6120C922C9006C9A4C /* User Details.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User Details.m"; sourceTree = "<group>"; };
 		84E0DD6320C924A0006C9A4C /* ChatObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatObject.h; sourceTree = "<group>"; };
 		84E0DD6420C924A0006C9A4C /* ChatObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatObject.m; sourceTree = "<group>"; };
+		84E0DD6720C93809006C9A4C /* JoinClubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoinClubViewController.h; sourceTree = "<group>"; };
+		84E0DD6820C93809006C9A4C /* JoinClubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoinClubViewController.m; sourceTree = "<group>"; };
 		BB292CD920BC76D500118553 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		BB292CDA20BC76D500118553 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		BB292CDC20BC7A3F00118553 /* AwardHistoryDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardHistoryDetailsViewController.h; sourceTree = "<group>"; };
@@ -236,6 +239,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		84E0DD6620C937DE006C9A4C /* JoinClub */ = {
+			isa = PBXGroup;
+			children = (
+				84E0DD6720C93809006C9A4C /* JoinClubViewController.h */,
+				84E0DD6820C93809006C9A4C /* JoinClubViewController.m */,
+			);
+			path = JoinClub;
+			sourceTree = "<group>";
+		};
 		BB292CD820BC76B900118553 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +304,7 @@
 				8401AD6820B55CB500B5F3C0 /* Event */,
 				849F9E3320BBC8F900202A3D /* Award history */,
 				BB292CD820BC76B900118553 /* Chat */,
+				84E0DD6620C937DE006C9A4C /* JoinClub */,
 				BB7932A420970C2600FF0F55 /* Main.storyboard */,
 				8478BAAD20AABA6E0076919D /* NewsHeader.xib */,
 				BB7932AA20970C2600FF0F55 /* Assets.xcassets */,
@@ -436,6 +449,7 @@
 				849F9E3920BBCDD200202A3D /* AwardCollectionViewCell.m in Sources */,
 				BB7932A320970C2600FF0F55 /* ViewController.m in Sources */,
 				847AE1EB20B684EA001353F7 /* EventDetailsTableViewCell.m in Sources */,
+				84E0DD6920C93809006C9A4C /* JoinClubViewController.m in Sources */,
 				8401AD7120B56F1000B5F3C0 /* EventObject.m in Sources */,
 				849F9E3C20BBD20000202A3D /* AwardHistory.m in Sources */,
 				849F9E3620BBC92B00202A3D /* AwardHistoryViewController.m in Sources */,

@@ -24,7 +24,10 @@
 -(id) init
 {
     self.membershipId = [NSString new];
-    self.membershipId = @"1";
+    self.membershipId = @"";
+    self.loginStatus = [NSString new];
+    self.loginStatus = @"0";
+    self.chatDisabled = YES;
     return self;
 }
 

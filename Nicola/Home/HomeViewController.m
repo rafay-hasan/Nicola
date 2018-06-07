@@ -12,6 +12,8 @@
 #import "ClubHistoryViewController.h"
 #import "AwardHistoryViewController.h"
 #import "ChatViewController.h"
+#import "JoinClubViewController.h"
+#import "User Details.h"
 
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -86,9 +88,24 @@
                             AwardHistoryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"award"];
                             [self.navigationController pushViewController:vc animated:YES];
                         }
-                        else if (indexPath.row == 5) {
-                            ChatViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"chat"];
+                        else if (indexPath.row == 4) {
+                            JoinClubViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"clubJoin"];
                             [self.navigationController pushViewController:vc animated:YES];
+                        }
+                        else if (indexPath.row == 5) {
+                            if  ([User_Details sharedInstance].membershipId.length > 0) {
+                                ChatViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"chat"];
+                                [self.navigationController pushViewController:vc animated:YES];
+                            }
+                            else {
+                                UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Message", Nil) message:@"Please log in first to chat" preferredStyle:UIAlertControllerStyleAlert];
+                                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                                    [alert dismissViewControllerAnimated:YES completion:nil];
+                                    [self.navigationController popToRootViewControllerAnimated:YES];
+                                }];
+                                [alert addAction:ok];
+                                [self presentViewController:alert animated:YES completion:nil];
+                            }
                         }
                     }
                     completion:NULL];

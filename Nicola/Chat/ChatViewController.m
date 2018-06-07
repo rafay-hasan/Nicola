@@ -34,6 +34,12 @@
     self.chatMessageArray = [NSMutableArray new];
     self.chatTableview.estimatedRowHeight = 80;
     self.chatTableview.rowHeight = UITableViewAutomaticDimension;
+    if ([User_Details sharedInstance].chatDisabled) {
+        self.chatTextField.userInteractionEnabled = NO;
+    }
+    else {
+        self.chatTextField.userInteractionEnabled = YES;
+    }
     [self CallChatWebservice];
 }
 
