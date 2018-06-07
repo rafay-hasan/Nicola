@@ -15,13 +15,17 @@
 #define Login_URL_API @"api_login_authentication_ios"
 #define ClubHistory_URL_API @"api_club_history"
 #define AwardHistory_URL_API @"api_award_history_by_limit/"
+#define ChatHistory_URL_API @"api_get_chat_messages/"
+#define SendMessage_URL_API @"api_save_app_user_chat_message"
 
 enum {
     HTTPRequestypeNews,
     HTTPRequestypeEvent,
     HTTPRequestypeLogin,
     HTTPRequestypeClubHistory,
-    HTTPRequestypeAwardHistory
+    HTTPRequestypeAwardHistory,
+    HTTPRequestypeChatHistory,
+    HTTPRequestypeSendMessage
 };
 typedef NSUInteger HTTPRequestType;
 

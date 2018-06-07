@@ -10,7 +10,7 @@
 #import "NewsObject.h"
 #import "EventObject.h"
 #import "AwardHistory.h"
-
+#import "ChatObject.h"
 @implementation RHWebServiceManager
 
 
@@ -56,6 +56,13 @@
                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllAwardHistoryItems:responseObject]];
                 }
             }
+            else if(self.requestType == HTTPRequestypeChatHistory)
+            {
+                if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
+                {
+                    [self.delegate dataFromWebReceivedSuccessfully:[self parseAllChatHistoryItems:responseObject]];
+                }
+            }
             else {
                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
                 {
@@ -88,7 +95,7 @@
     [manager POST:requestURL parameters:postDataDic progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         if([self.delegate conformsToProtocol:@protocol(RHWebServiceDelegate)])
         {
-            if(self.requestType == HTTPRequestypeLogin)
+            if(self.requestType == HTTPRequestypeLogin || self.requestType == HTTPRequestypeSendMessage)
             {
                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
                 {
@@ -238,6 +245,56 @@
     return awardItemsArray;
     
 }
+
+-(NSMutableArray *) parseAllChatHistoryItems :(id) response
+{
+    NSMutableArray *chatItemsArray = [NSMutableArray new];
+    
+    NSArray *tempArray = (NSArray *)response;
+    
+    for(NSInteger i = 0; i < tempArray.count; i++)
+    {
+        ChatObject *object = [ChatObject new];
+        
+        if([[[tempArray objectAtIndex:i] valueForKey:@"chat_message"] isKindOfClass:[NSString class]])
+        {
+            object.chatMessage = [[tempArray objectAtIndex:i] valueForKey:@"chat_message"];
+        }
+        else
+        {
+            object.chatMessage = @"";
+        }
+        
+        if([[[tempArray objectAtIndex:i] valueForKey:@"chat_message_sending_edited_date_time"] isKindOfClass:[NSString class]])
+        {
+            object.chatTime = [[tempArray objectAtIndex:i] valueForKey:@"chat_message_sending_edited_date_time"];
+        }
+        else
+        {
+            object.chatTime = @"";
+        }
+        
+        if([[[tempArray objectAtIndex:i] valueForKey:@"chat_from_admin"] isKindOfClass:[NSString class]])
+        {
+            if ([[[tempArray objectAtIndex:i] valueForKey:@"chat_from_admin"] isEqualToString:@"1"]) {
+                
+                object.chatFromAdmin = YES;
+            }
+            else {
+                object.chatFromAdmin = NO;
+            }
+        }
+        else
+        {
+            object.chatFromAdmin = NO;
+        }
+        [chatItemsArray addObject:object];
+    }
+    
+    return chatItemsArray;
+    
+}
+
 
 
 -(NSMutableArray *) parseAllEventsItems :(id) response
