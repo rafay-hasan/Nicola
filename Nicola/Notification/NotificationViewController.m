@@ -1,42 +1,30 @@
 //
-//  NewsDetailsViewController.m
+//  NotificationViewController.m
 //  Nicola
 //
-//  Created by Rafay Hasan on 15/5/18.
+//  Created by Rafay Hasan on 7/6/18.
 //  Copyright © 2018 Rafay Hasan. All rights reserved.
 //
 
-#import "NewsDetailsViewController.h"
-#import "NewsDetailsTableViewCell.h"
-#import "MXParallaxHeader.h"
-#import "NewsHeader.h"
 #import "NotificationViewController.h"
 #import "HomeViewController.h"
 #import "ChatViewController.h"
 #import "ProfileViewController.h"
+#import "SVProgressHUD.h"
 
-@interface NewsDetailsViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface NotificationViewController ()<UIWebViewDelegate>
 
-@property (strong,nonatomic) NewsHeader *myHeaderView;
-@property (weak, nonatomic) IBOutlet UITableView *newsDetailsTableview;
 - (IBAction)navigationButtonAction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *notificationWebview;
 
 @end
 
-@implementation NewsDetailsViewController
+@implementation NotificationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.myHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"NewsHeader" owner:self options:nil] objectAtIndex:0];
-    self.newsDetailsTableview.parallaxHeader.view = self.myHeaderView;
-    self.newsDetailsTableview.parallaxHeader.height = 263;
-    self.newsDetailsTableview.parallaxHeader.mode = MXParallaxHeaderModeFill;
-    self.newsDetailsTableview.parallaxHeader.minimumHeight = 240;
-    self.myHeaderView.titleLabel.text = @"La ultime  notizie";
-    self.myHeaderView.bannerImageview.image = [UIImage imageNamed:@"news_pic"];
-    self.newsDetailsTableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-
+    [self loadWebview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,33 +42,29 @@
 }
 */
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [SVProgressHUD show];
+    self.view.userInteractionEnabled = NO;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [SVProgressHUD dismiss];
+    self.view.userInteractionEnabled = YES;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsDetails" forIndexPath:indexPath];
-    cell.titleLabel.text = self.object.newsTitle;
-    cell.detailsLabel.text = self.object.newsDetailsString;
-    cell.dateLabel.text = self.object.newsDateStr;
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    return cell;
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [SVProgressHUD dismiss];
+    self.view.userInteractionEnabled = YES;
+}
+
+-(void) loadWebview {
+    NSString *urlString = @"http://bulegas.whatsupitec.com/webview_notification";
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [self.notificationWebview loadRequest:urlRequest];
 }
 
 - (IBAction)navigationButtonAction:(UIButton *)sender {
-    
-    if (sender.tag == 1001) {
-        NotificationViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"notification"];
-        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
-            [self.navigationController pushViewController:newView animated:YES];
-            
-        }
-    }
-    else if (sender.tag == 1002) {
+   
+    if (sender.tag == 1002) {
         HomeViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
         if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
             [self.navigationController pushViewController:newView animated:YES];

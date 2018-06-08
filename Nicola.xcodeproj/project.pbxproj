@@ -13,6 +13,7 @@
 		8401AD6E20B5667C00B5F3C0 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD6D20B5667B00B5F3C0 /* EventTableViewCell.m */; };
 		8401AD7120B56F1000B5F3C0 /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD7020B56F1000B5F3C0 /* EventObject.m */; };
 		8401AD7420B578AF00B5F3C0 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401AD7320B578AF00B5F3C0 /* EventDetailsViewController.m */; };
+		847294D920CA79CA0083DAEE /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847294D820CA79CA0083DAEE /* HomeTableViewCell.m */; };
 		8478BAAC20AABA530076919D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAAB20AABA530076919D /* NewsViewController.m */; };
 		8478BAAE20AABA6E0076919D /* NewsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8478BAAD20AABA6E0076919D /* NewsHeader.xib */; };
 		8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BAB020AABA8F0076919D /* NewsHeader.m */; };
@@ -32,6 +33,9 @@
 		84E0DD6220C922C9006C9A4C /* User Details.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6120C922C9006C9A4C /* User Details.m */; };
 		84E0DD6520C924A0006C9A4C /* ChatObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6420C924A0006C9A4C /* ChatObject.m */; };
 		84E0DD6920C93809006C9A4C /* JoinClubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6820C93809006C9A4C /* JoinClubViewController.m */; };
+		84E0DD6C20C94349006C9A4C /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6B20C94349006C9A4C /* RegistrationViewController.m */; };
+		84E0DD6F20C9435B006C9A4C /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD6E20C9435B006C9A4C /* NotificationViewController.m */; };
+		84E0DD7520C94376006C9A4C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0DD7420C94376006C9A4C /* ProfileViewController.m */; };
 		BB292CDB20BC76D500118553 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDA20BC76D500118553 /* ChatViewController.m */; };
 		BB292CDE20BC7A3F00118553 /* AwardHistoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDD20BC7A3F00118553 /* AwardHistoryDetailsViewController.m */; };
 		BB292CE120BC7ABF00118553 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = BB292CDF20BC7ABE00118553 /* KASlideShow.m */; };
@@ -59,6 +63,8 @@
 		8401AD7020B56F1000B5F3C0 /* EventObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventObject.m; sourceTree = "<group>"; };
 		8401AD7220B578AF00B5F3C0 /* EventDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
 		8401AD7320B578AF00B5F3C0 /* EventDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		847294D720CA79CA0083DAEE /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		847294D820CA79CA0083DAEE /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		8478BAAA20AABA530076919D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		8478BAAB20AABA530076919D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		8478BAAD20AABA6E0076919D /* NewsHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsHeader.xib; sourceTree = "<group>"; };
@@ -96,6 +102,12 @@
 		84E0DD6420C924A0006C9A4C /* ChatObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatObject.m; sourceTree = "<group>"; };
 		84E0DD6720C93809006C9A4C /* JoinClubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoinClubViewController.h; sourceTree = "<group>"; };
 		84E0DD6820C93809006C9A4C /* JoinClubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoinClubViewController.m; sourceTree = "<group>"; };
+		84E0DD6A20C94349006C9A4C /* RegistrationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		84E0DD6B20C94349006C9A4C /* RegistrationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		84E0DD6D20C9435B006C9A4C /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		84E0DD6E20C9435B006C9A4C /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		84E0DD7320C94376006C9A4C /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		84E0DD7420C94376006C9A4C /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		BB292CD920BC76D500118553 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		BB292CDA20BC76D500118553 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		BB292CDC20BC7A3F00118553 /* AwardHistoryDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardHistoryDetailsViewController.h; sourceTree = "<group>"; };
@@ -235,6 +247,8 @@
 			children = (
 				84C428E320A4213000736E42 /* HomeViewController.h */,
 				84C428E420A4213000736E42 /* HomeViewController.m */,
+				847294D720CA79CA0083DAEE /* HomeTableViewCell.h */,
+				847294D820CA79CA0083DAEE /* HomeTableViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -246,6 +260,33 @@
 				84E0DD6820C93809006C9A4C /* JoinClubViewController.m */,
 			);
 			path = JoinClub;
+			sourceTree = "<group>";
+		};
+		84E0DD7620C94380006C9A4C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				84E0DD7320C94376006C9A4C /* ProfileViewController.h */,
+				84E0DD7420C94376006C9A4C /* ProfileViewController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84E0DD7820C943A9006C9A4C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				84E0DD6A20C94349006C9A4C /* RegistrationViewController.h */,
+				84E0DD6B20C94349006C9A4C /* RegistrationViewController.m */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		84E0DD7920C943B8006C9A4C /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				84E0DD6D20C9435B006C9A4C /* NotificationViewController.h */,
+				84E0DD6E20C9435B006C9A4C /* NotificationViewController.m */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		BB292CD820BC76B900118553 /* Chat */ = {
@@ -305,6 +346,9 @@
 				849F9E3320BBC8F900202A3D /* Award history */,
 				BB292CD820BC76B900118553 /* Chat */,
 				84E0DD6620C937DE006C9A4C /* JoinClub */,
+				84E0DD7620C94380006C9A4C /* Profile */,
+				84E0DD7820C943A9006C9A4C /* Registration */,
+				84E0DD7920C943B8006C9A4C /* Notification */,
 				BB7932A420970C2600FF0F55 /* Main.storyboard */,
 				8478BAAD20AABA6E0076919D /* NewsHeader.xib */,
 				BB7932AA20970C2600FF0F55 /* Assets.xcassets */,
@@ -450,6 +494,7 @@
 				BB7932A320970C2600FF0F55 /* ViewController.m in Sources */,
 				847AE1EB20B684EA001353F7 /* EventDetailsTableViewCell.m in Sources */,
 				84E0DD6920C93809006C9A4C /* JoinClubViewController.m in Sources */,
+				84E0DD7520C94376006C9A4C /* ProfileViewController.m in Sources */,
 				8401AD7120B56F1000B5F3C0 /* EventObject.m in Sources */,
 				849F9E3C20BBD20000202A3D /* AwardHistory.m in Sources */,
 				849F9E3620BBC92B00202A3D /* AwardHistoryViewController.m in Sources */,
@@ -463,6 +508,8 @@
 				BB7932B120970C2600FF0F55 /* main.m in Sources */,
 				8401AD7420B578AF00B5F3C0 /* EventDetailsViewController.m in Sources */,
 				BB292CE120BC7ABF00118553 /* KASlideShow.m in Sources */,
+				84E0DD6F20C9435B006C9A4C /* NotificationViewController.m in Sources */,
+				84E0DD6C20C94349006C9A4C /* RegistrationViewController.m in Sources */,
 				BB292CDE20BC7A3F00118553 /* AwardHistoryDetailsViewController.m in Sources */,
 				8478BAAC20AABA530076919D /* NewsViewController.m in Sources */,
 				8401AD6720B55C7A00B5F3C0 /* ClubHistoryViewController.m in Sources */,
@@ -475,6 +522,7 @@
 				BB7932A920970C2600FF0F55 /* Nicola.xcdatamodeld in Sources */,
 				8478BAB420AABB600076919D /* NewsTableViewCell.m in Sources */,
 				8478BAB120AABA8F0076919D /* NewsHeader.m in Sources */,
+				847294D920CA79CA0083DAEE /* HomeTableViewCell.m in Sources */,
 				BB292CDB20BC76D500118553 /* ChatViewController.m in Sources */,
 				8401AD6E20B5667C00B5F3C0 /* EventTableViewCell.m in Sources */,
 			);

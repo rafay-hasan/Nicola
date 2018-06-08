@@ -7,8 +7,13 @@
 //
 
 #import "JoinClubViewController.h"
+#import "NotificationViewController.h"
+#import "HomeViewController.h"
+#import "ChatViewController.h"
+#import "ProfileViewController.h"
 
 @interface JoinClubViewController ()
+- (IBAction)navigationButtonAction:(UIButton *)sender;
 
 @end
 
@@ -34,4 +39,46 @@
 }
 */
 
+-(BOOL)isControllerAlreadyOnNavigationControllerStack:(UIViewController *)targetViewController{
+    // MainViewController *mainViewController = [MainViewController new];
+    //UINavigationController *nav = (UINavigationController *) mainViewController.rootViewController;
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:targetViewController.class]) {
+            [self.navigationController popToViewController:vc animated:NO];
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (IBAction)navigationButtonAction:(UIButton *)sender {
+    if (sender.tag == 1001) {
+        NotificationViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"notification"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1002) {
+        HomeViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1003) {
+        ChatViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"chat"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1004) {
+        ProfileViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+}
 @end

@@ -10,10 +10,13 @@
 #import "EventDetailsTableViewCell.h"
 #import "MXParallaxHeader.h"
 #import "NewsHeader.h"
-
+#import "HomeViewController.h"
+#import "NotificationViewController.h"
+#import "ChatViewController.h"
+#import "ProfileViewController.h"
 @interface EventDetailsViewController ()<UITableViewDataSource,UITableViewDelegate>
-- (IBAction)homeButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *eventDetailsTableview;
+- (IBAction)navigationButtonAction:(UIButton *)sender;
 
 @property (strong,nonatomic) NewsHeader *myHeaderView;
 
@@ -51,10 +54,6 @@
 }
 */
 
-- (IBAction)homeButtonAction:(id)sender {
-    NSArray *array = [self.navigationController viewControllers];
-    [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -90,6 +89,50 @@
     return footerView;
 }
 
+
+
+- (IBAction)navigationButtonAction:(UIButton *)sender {
+    if (sender.tag == 1001) {
+        NotificationViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"notification"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1002) {
+        HomeViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1003) {
+        ChatViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"chat"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1004) {
+        ProfileViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+}
+
+-(BOOL)isControllerAlreadyOnNavigationControllerStack:(UIViewController *)targetViewController{
+    // MainViewController *mainViewController = [MainViewController new];
+    //UINavigationController *nav = (UINavigationController *) mainViewController.rootViewController;
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:targetViewController.class]) {
+            [self.navigationController popToViewController:vc animated:NO];
+            return YES;
+        }
+    }
+    return NO;
+}
 
 
 @end

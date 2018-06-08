@@ -14,6 +14,7 @@
 #import "ChatViewController.h"
 #import "JoinClubViewController.h"
 #import "User Details.h"
+#import "HomeTableViewCell.h"
 
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -58,9 +59,26 @@
     return self.menuArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell" forIndexPath:indexPath];
-    cell.textLabel.text = [self.menuArray objectAtIndex:indexPath.row];
-    cell.textLabel.textColor = [UIColor colorWithRed:250.0/255.0 green:228.0/255.0 blue:3.0/255.0 alpha:1];
+    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell" forIndexPath:indexPath];
+    cell.menuNameLabel.text = [self.menuArray objectAtIndex:indexPath.row];
+    cell.menuNameLabel.textColor = [UIColor colorWithRed:250.0/255.0 green:228.0/255.0 blue:3.0/255.0 alpha:1];
+    if (indexPath.row == 5) {
+        if ([[User_Details sharedInstance].loginStatus isEqual:[NSNumber numberWithInt:1]] && [User_Details sharedInstance].membershipId.length > 0) {
+            cell.chatMarkerView.hidden = false;
+            if ([User_Details sharedInstance].chatDisabled) {
+                cell.chatMarkerView.backgroundColor = [UIColor redColor];
+            }
+            else {
+                cell.chatMarkerView.backgroundColor = [UIColor greenColor];
+            }
+        }
+        else {
+            cell.chatMarkerView.hidden = YES;
+        }
+    }
+    else {
+        cell.chatMarkerView.hidden = YES;
+    }
     cell.backgroundColor = [UIColor clearColor];
     return cell;
 }

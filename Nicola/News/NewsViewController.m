@@ -15,15 +15,21 @@
 #import "NewsObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NewsDetailsViewController.h"
+#import "NotificationViewController.h"
+#import "HomeViewController.h"
+#import "ChatViewController.h"
+#import "ProfileViewController.h"
 
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource,RHWebServiceDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *newsTableview;
-@property (strong,nonatomic) NewsHeader *myHeaderView;
+- (IBAction)navigationButtonAction:(UIButton *)sender;
 
+
+@property (strong,nonatomic) NewsHeader *myHeaderView;
 @property (strong,nonatomic) RHWebServiceManager *myWebService;
 @property (strong,nonatomic) NewsObject *newsObject;
 @property (strong,nonatomic) NSMutableArray *newsArray;
-- (IBAction)homeButtonAction:(id)sender;
+
 
 @end
 
@@ -142,8 +148,48 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)homeButtonAction:(id)sender {
-    NSArray *array = [self.navigationController viewControllers];
-    [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
+
+- (IBAction)navigationButtonAction:(UIButton *)sender {
+    if (sender.tag == 1001) {
+        NotificationViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"notification"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1002) {
+        HomeViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1003) {
+        ChatViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"chat"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1004) {
+        ProfileViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
 }
+
+-(BOOL)isControllerAlreadyOnNavigationControllerStack:(UIViewController *)targetViewController{
+    // MainViewController *mainViewController = [MainViewController new];
+    //UINavigationController *nav = (UINavigationController *) mainViewController.rootViewController;
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:targetViewController.class]) {
+            [self.navigationController popToViewController:vc animated:NO];
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

@@ -10,6 +10,7 @@
 #import "RHWebServiceManager.h"
 #import "SVProgressHUD.h"
 #import "User Details.h"
+#import "RegistrationViewController.h"
 
 @interface ViewController ()<RHWebServiceDelegate>
 
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *paswordTextfield;
 - (IBAction)loginButtonAction:(id)sender;
+- (IBAction)registrationButtonAction:(id)sender;
 
 
 @end
@@ -59,18 +61,36 @@
 
 -(void) dataFromWebReceivedSuccessfully:(id) responseObj
 {
+    [User_Details sharedInstance].membershipId = @"";
+    [User_Details sharedInstance].chatDisabled = YES;
+    [User_Details sharedInstance].loginStatus = @"0";
+    
     [SVProgressHUD dismiss];
     NSLog(@"%@",responseObj);
-    [User_Details sharedInstance].membershipId = [responseObj valueForKey:@"ref_membership_details_login_id"];
-    [User_Details sharedInstance].loginStatus = [responseObj valueForKey:@"login_status"];
-    NSLog(@"%@",[User_Details sharedInstance].membershipId);
-    if ([[responseObj valueForKey:@"membership_chat_disable"] isKindOfClass:[NSString class]]) {
-        if ([[responseObj valueForKey:@"membership_chat_disable"] isEqualToString:@"1"]) {
-            [User_Details sharedInstance].chatDisabled = YES;
+    
+    if ([[responseObj valueForKey:@"ref_membership_details_login_id"] isKindOfClass:[NSString class]]) {
+        [User_Details sharedInstance].membershipId = [responseObj valueForKey:@"ref_membership_details_login_id"];
+        [User_Details sharedInstance].loginStatus = [responseObj valueForKey:@"login_status"];
+        NSLog(@"%@",[User_Details sharedInstance].membershipId);
+        if ([[responseObj valueForKey:@"membership_chat_disable"] isKindOfClass:[NSString class]]) {
+            if ([[responseObj valueForKey:@"membership_chat_disable"] isEqualToString:@"1"]) {
+                [User_Details sharedInstance].chatDisabled = YES;
+            }
+            else {
+                [User_Details sharedInstance].chatDisabled = NO;
+            }
         }
-        else {
-            [User_Details sharedInstance].chatDisabled = NO;
-        }
+        [self performSegueWithIdentifier:@"home" sender:self];
+    }
+    else {
+        [SVProgressHUD dismiss];
+        self.view.userInteractionEnabled = YES;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Message", Nil) message:@"Invalid credential. Please enter correct username and password" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -91,4 +111,25 @@
 - (IBAction)loginButtonAction:(id)sender {
     [self CallUserDetailsWebserviceWithUDID:@"" forDeviceToken:@""];
 }
+
+- (IBAction)registrationButtonAction:(id)sender {
+    RegistrationViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"registration"];
+    if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+        [self.navigationController pushViewController:newView animated:YES];
+        
+    }
+}
+
+-(BOOL)isControllerAlreadyOnNavigationControllerStack:(UIViewController *)targetViewController{
+    // MainViewController *mainViewController = [MainViewController new];
+    //UINavigationController *nav = (UINavigationController *) mainViewController.rootViewController;
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:targetViewController.class]) {
+            [self.navigationController popToViewController:vc animated:NO];
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

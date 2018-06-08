@@ -13,13 +13,16 @@
 #import "ChatObject.h"
 #import "LeftUserTableViewCell.h"
 #import "RightUserTableViewCell.h"
+#import "NotificationViewController.h"
+#import "HomeViewController.h"
+#import "ProfileViewController.h"
 
 @interface ChatViewController ()<RHWebServiceDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *chatTableview;
-- (IBAction)homeButtonAction:(id)sender;
 - (IBAction)messageSendButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *chatTextField;
+- (IBAction)navigationButtonAction:(UIButton *)sender;
 
 @property (strong,nonatomic) RHWebServiceManager *myWebService;
 @property (strong,nonatomic) NSMutableArray *chatMessageArray;
@@ -158,10 +161,6 @@
     return footerView;
 }
 
-- (IBAction)homeButtonAction:(id)sender {
-    NSArray *array = [self.navigationController viewControllers];
-    [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
-}
 
 - (IBAction)messageSendButtonAction:(id)sender {
     if(self.chatTextField.text.length > 0) {
@@ -178,4 +177,40 @@
         [self presentViewController:alert animated:YES completion:nil];
     }
 }
+- (IBAction)navigationButtonAction:(UIButton *)sender {
+    if (sender.tag == 1001) {
+        NotificationViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"notification"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1002) {
+        HomeViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1004) {
+        ProfileViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+}
+
+-(BOOL)isControllerAlreadyOnNavigationControllerStack:(UIViewController *)targetViewController{
+    // MainViewController *mainViewController = [MainViewController new];
+    //UINavigationController *nav = (UINavigationController *) mainViewController.rootViewController;
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:targetViewController.class]) {
+            [self.navigationController popToViewController:vc animated:NO];
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

@@ -1,53 +1,32 @@
 //
-//  AwardHistoryDetailsViewController.m
+//  RegistrationViewController.m
 //  Nicola
 //
-//  Created by Rafay Hasan on 5/28/18.
+//  Created by Rafay Hasan on 7/6/18.
 //  Copyright © 2018 Rafay Hasan. All rights reserved.
 //
 
-#import "AwardHistoryDetailsViewController.h"
-#import "KASlideShow.h"
-#import "AwardDetailsTableViewCell.h"
-#import "NotificationViewController.h"
+#import "RegistrationViewController.h"
 #import "HomeViewController.h"
-#import "ChatViewController.h"
+#import "NotificationViewController.h"
 #import "ProfileViewController.h"
+#import "ChatViewController.h"
+#import "SVProgressHUD.h"
 
-@interface AwardHistoryDetailsViewController ()<KASlideShowDelegate,KASlideShowDataSource,UITableViewDelegate,UITableViewDataSource>
-{
-    NSMutableArray * _datasource;
-}
-@property (weak, nonatomic) IBOutlet KASlideShow *slideShow;
-@property (weak, nonatomic) IBOutlet UITableView *awardDetailsTableview;
+@interface RegistrationViewController ()<UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIWebView *registrationWebview;
 - (IBAction)navigationButtonAction:(UIButton *)sender;
+
 
 @end
 
-@implementation AwardHistoryDetailsViewController
+@implementation RegistrationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.slideShow.datasource = self;
-    self.slideShow.delegate = self;
-    [self.slideShow setDelay:2]; // Delay between transitions
-    [self.slideShow setTransitionDuration:1]; // Transition duration
-    [self.slideShow setTransitionType:KASlideShowTransitionFade]; // Choose a transition type (fade or slide)
-    [self.slideShow setImagesContentMode:UIViewContentModeScaleAspectFill]; // Choose a content mode for images to display
-    [self.slideShow addGesture:KASlideShowGestureTap]; // Gesture to go previous/next directly on the image
-    
-    _datasource = [@[[NSURL URLWithString:self.object.awardCoverPhotoUrlString],
-                     [NSURL URLWithString:self.object.awardHistoryImageUrlString]] mutableCopy];
-    self.awardDetailsTableview.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-}
-
--(void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:YES];
-    
-    [self.slideShow start];
-    
+    [self loadWebview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,34 +44,25 @@
 }
 */
 
-#pragma mark - KASlideShow datasource
-
-- (NSObject *)slideShow:(KASlideShow *)slideShow objectAtIndex:(NSUInteger)index
-{
-    return _datasource[index];
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [SVProgressHUD show];
+    self.view.userInteractionEnabled = NO;
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [SVProgressHUD dismiss];
+    self.view.userInteractionEnabled = YES;
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [SVProgressHUD dismiss];
+    self.view.userInteractionEnabled = YES;
 }
 
-- (NSUInteger)slideShowImagesNumber:(KASlideShow *)slideShow
-{
-    return _datasource.count;
+-(void) loadWebview {
+    NSString *urlString = @"http://bulegas.whatsupitec.com/webview_registration_page_1";
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [self.registrationWebview loadRequest:urlRequest];
 }
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    AwardDetailsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"awardDetailsCell" forIndexPath:indexPath];
-    cell.awardNameLabel.text = self.object.awardTitle;
-    cell.awardDetailsLabel.text = self.object.awardDetails;
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    return cell;
-}
-
 
 - (IBAction)navigationButtonAction:(UIButton *)sender {
     if (sender.tag == 1001) {

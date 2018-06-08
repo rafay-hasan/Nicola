@@ -15,6 +15,10 @@
 #import "AwardCollectionViewCell.h"
 #import "AwardHistoryDetailsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "NotificationViewController.h"
+#import "HomeViewController.h"
+#import "ChatViewController.h"
+#import "ProfileViewController.h"
 
 @interface AwardHistoryViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,RHWebServiceDelegate>
 
@@ -24,7 +28,7 @@
 @property (strong,nonatomic) NewsHeader *myHeaderView;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *awardCollectionview;
-- (IBAction)homeButtonAction:(id)sender;
+- (IBAction)navigationButtonAction:(UIButton *)sender;
 
 @end
 
@@ -185,10 +189,47 @@
     return 8.0;
 }
 
+- (IBAction)navigationButtonAction:(UIButton *)sender {
+    if (sender.tag == 1001) {
+        NotificationViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"notification"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1002) {
+        HomeViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1003) {
+        ChatViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"chat"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+    else if (sender.tag == 1004) {
+        ProfileViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"profile"];
+        if (![self isControllerAlreadyOnNavigationControllerStack:newView]) {
+            [self.navigationController pushViewController:newView animated:YES];
+            
+        }
+    }
+}
 
-- (IBAction)homeButtonAction:(id)sender {
-    NSArray *array = [self.navigationController viewControllers];
-    [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
+-(BOOL)isControllerAlreadyOnNavigationControllerStack:(UIViewController *)targetViewController{
+    // MainViewController *mainViewController = [MainViewController new];
+    //UINavigationController *nav = (UINavigationController *) mainViewController.rootViewController;
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:targetViewController.class]) {
+            [self.navigationController popToViewController:vc animated:NO];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end
