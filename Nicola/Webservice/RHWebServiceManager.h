@@ -25,6 +25,7 @@ enum {
     HTTPRequestypeClubHistory,
     HTTPRequestypeAwardHistory,
     HTTPRequestypeChatHistory,
+    HTTPRequestypeFetchNextChatHistory,
     HTTPRequestypeSendMessage
 };
 typedef NSUInteger HTTPRequestType;

@@ -15,6 +15,7 @@
 #import "JoinClubViewController.h"
 #import "User Details.h"
 #import "HomeTableViewCell.h"
+#import "ProfileViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -124,6 +125,10 @@
                                 [alert addAction:ok];
                                 [self presentViewController:alert animated:YES completion:nil];
                             }
+                        }
+                        else if (indexPath.row == 6) {
+                            ProfileViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"profile"];
+                            [self.navigationController pushViewController:vc animated:YES];
                         }
                     }
                     completion:NULL];

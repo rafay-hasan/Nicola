@@ -56,7 +56,7 @@
                     [self.delegate dataFromWebReceivedSuccessfully:[self parseAllAwardHistoryItems:responseObject]];
                 }
             }
-            else if(self.requestType == HTTPRequestypeChatHistory)
+            else if(self.requestType == HTTPRequestypeChatHistory || self.requestType == HTTPRequestypeFetchNextChatHistory)
             {
                 if([self.delegate respondsToSelector:@selector(dataFromWebReceivedSuccessfully:)])
                 {

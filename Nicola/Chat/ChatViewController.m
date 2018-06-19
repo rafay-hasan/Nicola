@@ -72,11 +72,20 @@
     [self.myWebService getPostDataFromWebURLWithUrlString:urlStr dictionaryData:postData];
 }
 
--(void) CallChatWebservice
+-(void) FetchNextChatHistory
 {
     [SVProgressHUD show];
     NSString *startingLimit = [NSString stringWithFormat:@"%li",self.chatMessageArray.count];
     NSString *urlStr = [NSString stringWithFormat:@"%@%@%@/%@",BASE_URL_API,ChatHistory_URL_API,[User_Details sharedInstance].membershipId,startingLimit];
+    self.myWebService = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeFetchNextChatHistory Delegate:self];
+    [self.myWebService getDataFromWebURLWithUrlString:urlStr];
+}
+
+-(void) CallChatWebservice
+{
+    [SVProgressHUD show];
+    //NSString *startingLimit = [NSString stringWithFormat:@"%li",self.chatMessageArray.count];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@%@/0",BASE_URL_API,ChatHistory_URL_API,[User_Details sharedInstance].membershipId];
     self.myWebService = [[RHWebServiceManager alloc]initWebserviceWithRequestType:HTTPRequestypeChatHistory Delegate:self];
     [self.myWebService getDataFromWebURLWithUrlString:urlStr];
 }
@@ -87,12 +96,26 @@
     self.view.userInteractionEnabled = YES;
     if(self.myWebService.requestType == HTTPRequestypeChatHistory)
     {
+        [self.chatMessageArray removeAllObjects];
         [self.chatMessageArray addObjectsFromArray:(NSArray *)responseObj];
         [self.chatTableview reloadData];
+        NSIndexPath* ipath = [NSIndexPath indexPathForRow: 0 inSection: self.chatMessageArray.count - 1];
+        [self.chatTableview scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+
     }
     else if (self.myWebService.requestType == HTTPRequestypeSendMessage) {
         self.chatTextField.text = @"";
         NSLog(@"%@",responseObj);
+        [self CallChatWebservice];
+        
+    }
+    else if (self.myWebService.requestType == HTTPRequestypeFetchNextChatHistory) {
+        NSArray *tempArray = (NSArray *)responseObj;
+        for (NSInteger i = tempArray.count - 1; i >=0;i--) {
+            [self.chatMessageArray insertObject:[tempArray objectAtIndex:i] atIndex:0];
+        }
+        [self.chatTableview reloadData];
+        
     }
 }
 
@@ -112,12 +135,10 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
-    NSInteger currentOffset = scrollView.contentOffset.y;
-    NSInteger maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
-    if (maximumOffset - currentOffset <= -40) {
-        
-        [self CallChatWebservice];
-        
+    
+    if (scrollView.contentOffset.y < 0) {
+        NSLog(@"scrolled on top");
+        [self FetchNextChatHistory];
     }
 }
 
